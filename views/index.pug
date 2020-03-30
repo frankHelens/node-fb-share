@@ -5,20 +5,17 @@ html
     title= title
   body
     h1= content
-    .fb-share-button(
-      data-href=shareLink
-      data-layout="button_count")
+    //- facebook sdk
+    script(async defer crossorigin="anonymous"
+      src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0&appId=547910102421338&autoLogAppEvents=1")
     script.
-      // facebook sdk
-      (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "https://connect.facebook.net/en_US/sdk.js";
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
-
-      window.onload = () => {
-        console.log('nice')
-        //- window.location.href = '#{shareLink}'
-      }
+     // facebook配置
+     window.onload = () => {
+      FB.ui({
+        method: 'share',
+        href: '#{shareLink}' //这里换成你的网址
+      }, function(response){
+        console.log('分享回调', response)
+        //分享回调
+      })
+     }

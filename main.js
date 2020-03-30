@@ -17,5 +17,5 @@ app.get('/', async (req, res) => {
 })
 
 app.listen(8888, () => {
-  console.log('已启动')
+  console.log('服务已启动，端口号8888')
 })

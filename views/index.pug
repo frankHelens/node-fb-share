@@ -28,9 +28,16 @@ html
           xfbml: true,
           version: 'v5.0'
         });
+        FB.ui({
+          method: 'share',
+          href: 'https://testfb.hzmra.com:808/' //这里换成你的网址
+        }, function(response){
+          console.log('分享回调', response)
+          //分享回调
+        })
         console.log('window.FB.ui', window.FB.ui)
       };
-      console.log('v2')
+      console.log('v3')
       console.log('window.FB', window.FB)
       //- FB.ui({
       //-   method: 'share',

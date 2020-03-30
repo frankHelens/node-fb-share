@@ -1,6 +1,5 @@
 html
   head
-    meta(property="og:url" content=shareLink)
     meta(property="og:type" content="article")
     meta(property="og:title" content=title)
     meta(property="og:image" content="https://hnzmzs.s3-us-west-2.amazonaws.com/lfshz/facebook0100243.png")
@@ -18,7 +17,7 @@ html
      window.onload = () => {
       FB.ui({
         method: 'share',
-        href: '#{shareLink}' //这里换成你的网址
+        href: '#{link}' //这里换成你的网址
       }, function(response){
         console.log('分享回调', response)
         //分享回调

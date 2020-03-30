@@ -1,11 +1,10 @@
 html
   head
-    meta(property="og:type" content="article")
     meta(property="og:title" content=title)
-    meta(property="og:image" content="https://hnzmzs.s3-us-west-2.amazonaws.com/lfshz/facebook0100243.png")
+    meta(property="og:image" content=imageUrl)
     meta(name="og:image:width" content="600")
     meta(name="og:image:height" content="314")
-    meta(name="og:description" content="dfadsfasfasfsadfsadfasdfasdfasdfasdf.kjasdlkfj")
+    meta(name="og:description" content=content)
     title= title
   body
     h1= content
@@ -13,7 +12,10 @@ html
     script(async defer crossorigin="anonymous"
       src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0&appId=547910102421338&autoLogAppEvents=1")
     script.
-     // facebook配置
+      // facebook配置
+      //- window.onload = () => {
+      //-   window.location.href = 'https://www.baidu.com'
+      //- }
      window.onload = () => {
       FB.ui({
         method: 'share',

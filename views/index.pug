@@ -9,7 +9,6 @@ html
     //- script(async defer crossorigin="anonymous"
       src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0&appId=547910102421338&autoLogAppEvents=1")
     script.
-      const appId = '547910102421338'
       // facebook配置
       //- window.onload = () => {
       //-   window.location.href = 'https://www.baidu.com'
@@ -24,7 +23,7 @@ html
       
       window.fbAsyncInit = function() {
         window.FB.init({
-          appId,
+          appId: '547910102421338',
           autoLogAppEvents: true,
           xfbml: true,
           version: 'v5.0'

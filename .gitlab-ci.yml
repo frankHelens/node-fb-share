@@ -1,0 +1,14 @@
+image: node:latest
+
+stages: # 要执行的步骤
+  - build
+  
+build: # 步骤 build
+    stage: build
+    only:
+      - test # 当submit到test分支或tags时才触发此build命令
+    tags:
+      - test # 由shell执行, tag 名是 test
+    script:
+      - npm install
+      #- rsync -a --delete /home/gitlab-runner/builds/6d62e4fe/0/ebuyhouse-cg/lfs-node-fb-share/ /html/lfs-node-fb-share/

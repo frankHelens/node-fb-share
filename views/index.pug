@@ -1,53 +1,21 @@
-html(lang="en")
+html
   head
-    meta(charset="utf-8")
-    meta(name="viewport" content="width=device-width, initial-scale=1")
-    meta(property="og:url" content="http://www.nytimes.com/2015/02/19/arts/international/when-great-minds-dont-think-alike.html")
-    meta(property="og:type" content="article")
-    meta(property="og:title" content="When Great Minds Don’t Think Alike")
-    meta(property="og:description" content="How much does culture influence creative thinking?")
-    meta(property="og:image" content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg")
-    title='测试测试测试'
+    meta(property="og:image" content=imageUrl)
+    meta(name="description" content=content)
+    title= title
   body
     h1= content
     //- facebook sdk
-    //- script(async defer crossorigin="anonymous"
+    script(async defer crossorigin="anonymous"
       src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0&appId=547910102421338&autoLogAppEvents=1")
     script.
-      // facebook配置
-      //- window.onload = () => {
-      //-   window.location.href = 'https://www.baidu.com'
-      //- }
-      (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "https://connect.facebook.net/en_US/sdk.js";
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
-      
-      window.fbAsyncInit = function() {
-        window.FB.init({
-          appId: '547910102421338',
-          autoLogAppEvents: true,
-          xfbml: true,
-          version: 'v5.0'
-        });
-        FB.ui({
-          method: 'share',
-          href: 'https://testfb.hzmra.com:808/' //这里换成你的网址
-        }, function(response){
-          console.log('分享回调', response)
-          //分享回调
-        })
-        console.log('window.FB.ui', window.FB.ui)
-      };
-      console.log('v3')
-      console.log('window.FB', window.FB)
-      //- FB.ui({
-      //-   method: 'share',
-      //-   href: 'https://testfb.hzmra.com:808/' //这里换成你的网址
-      //- }, function(response){
-      //-   console.log('分享回调', response)
-      //-   //分享回调
-      //- })
+     // facebook配置
+     window.onload = () => {
+      FB.ui({
+        method: 'share',
+        href: '#{link}' //这里换成你的网址
+      }, function(response){
+        console.log('分享回调', response)
+        //分享回调
+      })
+     }

@@ -1,19 +1,14 @@
 const express = require('express');
 const app = express()
-const request = require('./utils/request')
+// const request = require('./utils/request')
+const api = require('./utils/api')
 
 app.set('view engine', 'pug')
 
 app.get('/', async (req, res) => {
-  const shareData = await request({
-    url: 'https://www.hzmra.com/web/live/get/205695763420807168'
-  })
-  res.render('index', {
-    title: shareData.title,
-    imageUrl: shareData.imageUrl,
-    content: shareData.introduce,
-    link: shareData.shareLink
-  })
+  const {type, id} = req.query
+  const data = await new api(type, id)
+  res.render('index', data)
 })
 
 app.listen(8888, () => {

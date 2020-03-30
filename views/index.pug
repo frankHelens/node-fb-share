@@ -13,32 +13,27 @@ html
       //- window.onload = () => {
       //-   window.location.href = 'https://www.baidu.com'
       //- }
-      const FBConfig = () => {
-        (function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s); js.id = id;
-          js.src = "https://connect.facebook.net/en_US/sdk.js";
-          fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-        
-        window.fbAsyncInit = function() {
-          window.FB.init({
-            appId,
-            autoLogAppEvents: true,
-            xfbml: true,
-            version: 'v5.0'
-          });
-        };
-      }
-      window.onload = () => {
-        console.log('v2')
-        FBConfig()
-        FB.ui({
-          method: 'share',
-          href: 'https://testfb.hzmra.com:808/' //这里换成你的网址
-        }, function(response){
-          console.log('分享回调', response)
-          //分享回调
-        })
-      }
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+      
+      window.fbAsyncInit = function() {
+        window.FB.init({
+          appId,
+          autoLogAppEvents: true,
+          xfbml: true,
+          version: 'v5.0'
+        });
+      };
+      console.log('v2')
+      //- FB.ui({
+      //-   method: 'share',
+      //-   href: 'https://testfb.hzmra.com:808/' //这里换成你的网址
+      //- }, function(response){
+      //-   console.log('分享回调', response)
+      //-   //分享回调
+      //- })

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta property="og:url" content="http://www.nytimes.com/2015/02/19/arts/international/when-great-minds-dont-think-alike.html" />
+  <meta property="og:url" content="https://testfb.hzmra.com/?type=live&id=205695763420807168" />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="When Great Minds Don’t Think Alike" />
   <meta property="og:description" content="How much does culture influence creative thinking?" />
@@ -11,6 +11,18 @@
   <title>Document</title>
 </head>
 <body>
-  
+  <script async defer crossorigin="anonymous"
+  src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0&appId=547910102421338&autoLogAppEvents=1"></script>
+  <script>
+    window.onload = () => {
+      FB.ui({
+        method: 'share',
+        href: `https://assist.huzemin.com/#/help/1199592563663896578` //这里换成你的网址
+      }, function(response){
+        console.log('分享回调', response)
+        //分享回调
+      })
+    }
+  </script>
 </body>
 </html>

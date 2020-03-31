@@ -6,10 +6,13 @@ const api = require('./utils/api')
 app.set('view engine', 'pug')
 
 app.get('/', async (req, res) => {
+  console.log(req.query)
   const {type, id} = req.query
-  console.log(api[type])
-  if (api[type]) {
-    const data = await api[type](id)
+  console.log(api)
+  const { module } = api
+  console.log(module[type])
+  if (module[type]) {
+    const data = await module[type](id)
     res.render('index', data)
   } else {
     res.render('index', {

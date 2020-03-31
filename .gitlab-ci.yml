@@ -12,5 +12,5 @@ build: # 步骤 build
     script:
       - npm install
       - systemctl stop lfs-node-fb-share
-      - rsync -a --delete --exclude ".git" --exclude ".gitignore" --exclude ".gitlab-ci.yml" /home/gitlab-runner/builds/6d62e4fe/0/ebuyhouse-cg/lfs-node-fb-share/ /html/lfs-node-fb-share/
+      - rsync -a --delete --exclude ".git" --exclude ".gitignore" --exclude ".gitlab-ci.yml" /home/gitlab-runner/builds/b80f33d3/0/ebuyhouse-cg/lfs-node-fb-share/ /html/lfs-node-fb-share/
       - systemctl start lfs-node-fb-share

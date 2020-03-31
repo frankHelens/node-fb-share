@@ -6,17 +6,19 @@ const api = require('./utils/api')
 app.set('view engine', 'pug')
 
 app.get('/', async (req, res) => {
-  console.log(req.query)
   const {type, id} = req.query
-  console.log(api)
   const { module } = api
-  console.log(module[type])
-  console.log('test', typeof module[type])
   if (module[type]) {
     const data = await module[type](id)
-    res.render('index', data)
+    res.render('index', {
+      ...data,
+      id,
+      type
+    })
   } else {
     res.render('index', {
+      id,
+      type,
       title: 'test',
       imageUrl: 'https://www.baidu.com/img/bd_logo1.png',
       content: 'test-content'

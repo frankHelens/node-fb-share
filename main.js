@@ -7,8 +7,17 @@ app.set('view engine', 'pug')
 
 app.get('/', async (req, res) => {
   const {type, id} = req.query
-  const data = await new api(type, id)
-  res.render('index', data)
+  console.log(api[type])
+  if (api[type]) {
+    const data = await api[type](id)
+    res.render('index', data)
+  } else {
+    res.render('index', {
+      title: 'test',
+      imageUrl: 'https://www.baidu.com/img/bd_logo1.png',
+      content: 'test-content'
+    })
+  }
 })
 
 app.listen(8888, () => {

@@ -3,7 +3,7 @@ const app = express()
 // const request = require('./utils/request')
 const api = require('./utils/api')
 
-app.set('view engine', 'pug')
+app.set('view engine', 'ejs')
 
 app.get('/', async (req, res) => {
   const {type, id} = req.query

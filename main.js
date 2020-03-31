@@ -11,6 +11,7 @@ app.get('/', async (req, res) => {
   console.log(api)
   const { module } = api
   console.log(module[type])
+  console.log('test', typeof module[type])
   if (module[type]) {
     const data = await module[type](id)
     res.render('index', data)

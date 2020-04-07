@@ -2,7 +2,7 @@ const request = require('./request')
 
 exports.module = {
   live: id => request({
-    url: `https://test.ebuyhouse.com:8060/web/live/get/${id}`
+    url: `https://test.ebuyhouse.com:8070/web/live/get/${id}`
   }).then(res => {
     console.log(res)
     return {

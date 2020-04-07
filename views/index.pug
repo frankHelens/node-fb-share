@@ -9,21 +9,7 @@ html(lang="en")
     meta(property="og:image" content=imageUrl)
     title=title
   body
-    h2=title
-    p=link
-    p=content
-    img(src=imageUrl)
-    //- facebook sdk
-    script(async defer crossorigin="anonymous"
-      src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0&appId=547910102421338&autoLogAppEvents=1")
-    script.
-     // facebook配置
-     window.onload = () => {
-      FB.ui({
-        method: 'share',
-        href: `https://testfb.hzmra.com/?type=live&id=1229351467831480321` //这里换成你的网址
-      }, function(response){
-        console.log('分享回调', response)
-        //分享回调
-      })
-     }
+    iframe(
+      width="100%"
+      height="100%"
+      src=link)

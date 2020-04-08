@@ -2,14 +2,23 @@ const request = require('./request')
 
 exports.module = {
   live: id => request({
-    url: `https://test.ebuyhouse.com:8070/web/live/get/${id}`
+    url: `web/live/get/${id}`
   }).then(res => {
-    console.log(res)
     return {
       title: res.title,
       imageUrl: res.imageUrl,
       content: res.introduce,
       link: res.shareLink
+    }
+  }),
+  redPacket: id => request({
+    url: `town/web/lucky/detail/${id}`
+  }).then(res => {
+    return {
+      title: res.title,
+      imageUrl: 'https://lfshz.oss-cn-shenzhen.aliyuncs.com/lfshz_images/hongbao.png',
+      content: res.remark,
+      link: res.shareUrl + id
     }
   })
 }

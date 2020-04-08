@@ -4,7 +4,7 @@ const service = axios.create({
   // 设置超时时间
   timeout: 60000,
   // baseURL: process.env.BASE_URL + '/town'
-  baseURL: '/web'
+  baseURL: 'https://test.ebuyhouse.com:8070'
 })
 
 /**

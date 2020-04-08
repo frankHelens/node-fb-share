@@ -16,7 +16,7 @@ exports.module = {
   }).then(res => {
     return {
       title: res.title,
-      imageUrl: 'https://lfshz.oss-cn-shenzhen.aliyuncs.com/lfshz_images/hongbao.png',
+      imageUrl: 'https://hnzmzs.s3-us-west-2.amazonaws.com/lfshz/20200408103130open.jpg',
       content: res.remark,
       link: res.shareUrl + id
     }

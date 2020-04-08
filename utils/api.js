@@ -20,5 +20,25 @@ exports.module = {
       content: res.remark,
       link: res.shareUrl + id
     }
+  }),
+  special: id => request({
+    url: `town/web/special/get/${id}`
+  }).then(res => {
+    return {
+      title: res.title,
+      imageUrl: res.imageUrl,
+      content: res.content,
+      link: `https://testapi.hzmra.com/special/#/detail/${id}`
+    }
+  }),
+  solicit: id => request({
+    url: `town/web/collect/activity/find/${id}`
+  }).then(res => {
+    return {
+      title: res.title,
+      imageUrl: res.imageUrl,
+      content: res.depict,
+      link: `https://testapi.hzmra.com/special/#/solicit/${id}`
+    }
   })
 }
